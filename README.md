@@ -24,7 +24,7 @@ npm config set registry https://registry.npm.taobao.org
 npm --registry=https://registry.npm.taobao.org
 ```
 
-## npm常用命令
+## 2、npm常用命令
 ```
 // 查找命令
 npm search element-ui --registry=https://registry.npmjs.org
