@@ -4,6 +4,7 @@
 * 查看源
 ```
 npm config get registry
+
 // 或
 npm config list
 ```
