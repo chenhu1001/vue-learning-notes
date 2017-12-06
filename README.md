@@ -23,3 +23,15 @@ npm config set registry https://registry.npm.taobao.org
 ```
 npm --registry=https://registry.npm.taobao.org
 ```
+
+## npm常用命令
+```
+// 查找命令
+npm search element-ui --registry=https://registry.npmjs.org
+
+// --save参数表示将该模块写入dependencies属性
+npm install express --save
+
+// --save-dev表示将该模块写入devDependencies属性
+npm install express --save-dev
+```
