@@ -99,3 +99,190 @@ axios.defaults.baseURL = apiConfig.baseURL
 ```
 
 这样就一劳永逸啦！
+
+## 4、服务器实现跨域REST请求
+* 配置web.xml
+```
+<!-- 通过CORS技术实现AJAX跨域访问 -->
+<filter>
+    <filter-name>corsFilter</filter-name>
+    <filter-class>cn.edu.tju.rico.filter.CorsFilter</filter-class>
+    <init-param>
+        <param-name>allowOrigin</param-name>
+        <param-value>http://localhost:8080</param-value>
+    </init-param>
+    <init-param>
+        <param-name>allowMethods</param-name>
+        <param-value>GET,POST,PUT,DELETE,OPTIONS</param-value>
+    </init-param>
+    <init-param>
+        <param-name>allowCredentials</param-name>
+        <param-value>true</param-value>
+    </init-param>
+    <init-param>
+        <param-name>allowHeaders</param-name>
+        <param-value>Content-Type,X-Token</param-value>
+    </init-param>
+</filter>
+<filter-mapping>
+    <filter-name>corsFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+</filter-mapping>
+```
+* 添加CorsFilter
+```
+package cn.edu.tju.rico.filter;
+
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
+
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import cn.edu.tju.rico.utils.CollectionUtil;
+import cn.edu.tju.rico.utils.StringUtil;
+
+/**        
+ * Title: 跨域访问处理(跨域资源共享)    
+ * Description: 解决前后端分离架构中的跨域问题
+ * @author rico       
+ * @created 2017年7月4日 下午5:00:09    
+ */      
+public class CorsFilter implements Filter {
+    private String allowOrigin;
+    private String allowMethods;
+    private String allowCredentials;
+    private String allowHeaders;
+    private String exposeHeaders;
+
+    @Override
+    public void init(FilterConfig filterConfig) throws ServletException {
+        allowOrigin = filterConfig.getInitParameter("allowOrigin");
+        allowMethods = filterConfig.getInitParameter("allowMethods");
+        allowCredentials = filterConfig.getInitParameter("allowCredentials");
+        allowHeaders = filterConfig.getInitParameter("allowHeaders");
+        exposeHeaders = filterConfig.getInitParameter("exposeHeaders");
+    }
+
+
+    /** 
+     * @description 通过CORS技术实现AJAX跨域访问,只要将CORS响应头写入response对象中即可
+     * @author rico       
+     * @created 2017年7月4日 下午5:02:38      
+     * @param req
+     * @param res
+     * @param chain
+     * @throws IOException
+     * @throws ServletException     
+     * @see javax.servlet.Filter#doFilter(javax.servlet.ServletRequest, javax.servlet.ServletResponse, javax.servlet.FilterChain)     
+     */  
+    @Override
+    public void doFilter(ServletRequest req, ServletResponse res,
+            FilterChain chain) throws IOException, ServletException {
+        HttpServletRequest request = (HttpServletRequest) req;
+        HttpServletResponse response = (HttpServletResponse) res;
+        String currentOrigin = request.getHeader("Origin");
+        if (StringUtil.isNotEmpty(allowOrigin)) {
+            List<String> allowOriginList = Arrays
+                    .asList(allowOrigin.split(","));
+            if (CollectionUtil.isNotEmpty(allowOriginList)) {
+                if (allowOriginList.contains(currentOrigin)) {
+                    response.setHeader("Access-Control-Allow-Origin",
+                            currentOrigin);
+                }
+            }
+        }
+        if (StringUtil.isNotEmpty(allowMethods)) {
+            response.setHeader("Access-Control-Allow-Methods", allowMethods);
+        }
+        if (StringUtil.isNotEmpty(allowCredentials)) {
+            response.setHeader("Access-Control-Allow-Credentials",
+                    allowCredentials);
+        }
+        if (StringUtil.isNotEmpty(allowHeaders)) {
+            response.setHeader("Access-Control-Allow-Headers", allowHeaders);
+        }
+        if (StringUtil.isNotEmpty(exposeHeaders)) {
+            response.setHeader("Access-Control-Expose-Headers", exposeHeaders);
+        }
+        chain.doFilter(req, res);
+    }
+
+    @Override
+    public void destroy() {
+    }
+}
+```
+* 工具类
+```
+StringUtil
+
+package cn.edu.tju.rico.utils;
+
+  
+/**        
+ * Title: 字符串工具类    
+ * @author rico       
+ * @created 2017年7月4日 下午5:15:29    
+ */      
+public class StringUtil {
+	  
+	/**     
+	 * @description 给定字符串是否为空或空串
+	 * @author rico       
+	 * @created 2017年7月4日 下午5:15:46     
+	 * @param str
+	 * @return     
+	 */
+	public static boolean isNotEmpty(String str) {
+		if (str != null && str.length() != 0) {
+			return true;
+		}
+		return false;
+	}
+
+	/**     
+	 * @description 给定字符串是否为空或空串
+	 * @author rico       
+	 * @created 2017年7月4日 下午5:15:46     
+	 * @param str
+	 * @return     
+	 */
+	public static boolean isEmpty(String str) {
+		if (str != null && str.length() != 0) {
+			return false;
+		}
+		return true;
+	}
+}
+```
+```
+CollectionUtil
+
+package cn.edu.tju.rico.utils;
+
+import java.util.Collection;
+
+  
+/**        
+ * Title: Collection 工具类    
+ * Description: 
+ * @author rico       
+ * @created 2017年7月4日 下午5:14:01    
+ */      
+public class CollectionUtil {
+	public static boolean isNotEmpty(Collection<?> c){
+		if (c != null && c.size() != 0 ) {
+			return true;
+		}
+		return false;
+	}
+}
+```
