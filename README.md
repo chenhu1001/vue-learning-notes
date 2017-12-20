@@ -286,3 +286,13 @@ public class CollectionUtil {
 	}
 }
 ```
+## 5、watch钩子函数的用法
+```
+watch: {
+  radio: {
+    handler: function (val, oldval) {
+      console.log(val)
+    }
+  }
+}
+```
