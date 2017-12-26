@@ -1,4 +1,7 @@
-[toc]
+use:
+* auto-gen TOC:
+{:toc}
+
 ## 1、登录接口
 **描述：** 
 
