@@ -428,3 +428,61 @@
 
 - 更多返回错误代码请看错误代码描述
 
+## 7、用户列表
+**描述：** 
+
+- 用户列表接口
+
+**请求URL：** 
+- ` http://xx.com/user/getUserInfoList `
+  
+**请求方式：**
+- POST 
+
+**参数：** 
+
+|参数名|必选|类型|说明|
+|:----    |:---|:----- |-----   |
+| pageSize |是  |int |分页大小   |
+| currentPage |是  |int |当前分页   |
+| userName |否  |string |用户名   |
+| trueName |否  |string |真实姓名   |
+| roles |否  |string |多个角色名   |
+| all |否  |string |筛选条件-按userName-trueName-roles   |
+
+ **返回示例**
+
+``` 
+{
+  "data": {
+    "currentPage": 1,
+    "datas": [
+      {
+        "createTime": "2017-12-14 08:57:20",
+        "id": 1,
+        "roles": "总监,开发人员,总经理",
+        "status": 1,
+        "trueName": "administrator",
+        "userName": "admin"
+      }
+    ],
+    "pageSize": 0,
+    "totals": 1
+  },
+  "msg": "操作成功",
+  "statusCode": "0"
+}
+```
+
+ **返回参数说明** 
+
+|参数名|类型|说明|
+|:-----  |:-----|-----                           |
+| statusCode |int   |状态码  |
+| roles |string   |多个角色名  |
+| trueName |string   |真实姓名  |
+| userName |string   |用户名  |
+
+ **备注** 
+
+- 更多返回错误代码请看错误代码描述
