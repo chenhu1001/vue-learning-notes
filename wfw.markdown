@@ -1,11 +1,10 @@
-
-    
+## 1、登录接口
 **简要描述：** 
 
-- 用户注册接口
+- 用户登录接口
 
 **请求URL：** 
-- ` http://xx.com/api/user/register `
+- ` http://xx.com/user/login `
   
 **请求方式：**
 - POST 
@@ -16,7 +15,6 @@
 |:----    |:---|:----- |-----   |
 |username |是  |string |用户名   |
 |password |是  |string | 密码    |
-|name     |否  |string | 昵称    |
 
  **返回示例**
 
