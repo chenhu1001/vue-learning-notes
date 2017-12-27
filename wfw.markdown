@@ -486,3 +486,80 @@
  **备注** 
 
 - 更多返回错误代码请看错误代码描述
+
+## 8、角色列表
+**描述：** 
+
+- 角色列表接口
+
+**请求URL：** 
+- ` http://xx.com/role/getRoleList `
+  
+**请求方式：**
+- POST 
+
+**参数：** 
+
+|参数名|必选|类型|说明|
+|:----    |:---|:----- |-----   |
+| pageSize |是  |int |分页大小   |
+| currentPage |是  |int |当前分页   |
+
+ **返回示例**
+
+``` 
+{
+  "data": {
+    "currentPage": 3,
+    "datas": [
+      {
+        "createTime": 1513559114000,
+        "createUser": "admin",
+        "description": "负责全局事务",
+        "id": 1,
+        "isSystemRole": 1,
+        "modifyTime": 1513645504000,
+        "modifyUser": "admin",
+        "roleName": "总经理",
+        "status": 1
+      },
+      {
+        "createTime": 1513645552000,
+        "createUser": "admin",
+        "description": "协助总经理",
+        "id": 2,
+        "isSystemRole": 0,
+        "modifyTime": 1513731945000,
+        "modifyUser": "admin",
+        "roleName": "总监",
+        "status": 1
+      },
+      {
+        "createTime": 1513731985000,
+        "createUser": "admin",
+        "description": "实现具体功能",
+        "id": 3,
+        "isSystemRole": 1,
+        "modifyTime": 1513818374000,
+        "modifyUser": "admin",
+        "roleName": "开发人员",
+        "status": 1
+      }
+    ],
+    "pageSize": 2,
+    "totals": 1
+  },
+  "msg": "操作成功",
+  "statusCode": "0"
+}
+```
+
+ **返回参数说明** 
+
+|参数名|类型|说明|
+|:-----  |:-----|-----                           |
+| statusCode |int   |状态码  |
+
+ **备注** 
+
+- 更多返回错误代码请看错误代码描述
