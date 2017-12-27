@@ -563,3 +563,127 @@
  **备注** 
 
 - 更多返回错误代码请看错误代码描述
+
+## 9、新增角色
+**描述：** 
+
+- 新增角色接口
+
+**请求URL：** 
+- ` http://xx.com/role/save `
+  
+**请求方式：**
+- POST 
+
+**参数：** 
+
+|参数名|必选|类型|说明|
+|:----    |:---|:----- |-----   |
+| id |是  |int |id   |
+| roleName |否  |string |角色名   |
+| createTime |否  |string |创建时间   |
+| createUser |否  |string |创建用户   |
+| description |否  |string |描述   |
+| isSystemRole |否  |int |是否系统角色   |
+| modifyTime |否  |string |修改时间   |
+| modifyUser |否  |string |修改用户   |
+| status |否  |int |状态   |
+
+ **返回示例**
+
+``` 
+{
+  "msg": "操作成功",
+  "statusCode": "0"
+}
+```
+
+ **返回参数说明** 
+
+|参数名|类型|说明|
+|:-----  |:-----|-----                           |
+| statusCode |int   |状态码  |
+
+ **备注** 
+
+- 更多返回错误代码请看错误代码描述
+
+## 10、修改角色
+**描述：** 
+
+- 修改角色接口
+
+**请求URL：** 
+- ` http://xx.com/role/update `
+  
+**请求方式：**
+- POST 
+
+**参数：** 
+
+|参数名|必选|类型|说明|
+|:----    |:---|:----- |-----   |
+| id |是  |int |id   |
+| roleName |否  |string |角色名   |
+| createTime |否  |string |创建时间   |
+| createUser |否  |string |创建用户   |
+| description |否  |string |描述   |
+| isSystemRole |否  |int |是否系统角色   |
+| modifyTime |否  |string |修改时间   |
+| modifyUser |否  |string |修改用户   |
+| status |否  |int |状态   |
+
+ **返回示例**
+
+``` 
+{
+  "msg": "操作成功",
+  "statusCode": "0"
+}
+```
+
+ **返回参数说明** 
+
+|参数名|类型|说明|
+|:-----  |:-----|-----                           |
+| statusCode |int   |状态码  |
+
+ **备注** 
+
+- 更多返回错误代码请看错误代码描述
+
+## 11、删除角色
+**描述：** 
+
+- 删除角色接口
+
+**请求URL：** 
+- ` http://xx.com/role/delete `
+  
+**请求方式：**
+- POST 
+
+**参数：** 
+
+|参数名|必选|类型|说明|
+|:----    |:---|:----- |-----   |
+| id |是  |int |id   |
+
+ **返回示例**
+
+``` 
+{
+  "msg": "操作成功",
+  "statusCode": "0"
+}
+```
+
+ **返回参数说明** 
+
+|参数名|类型|说明|
+|:-----  |:-----|-----                           |
+| statusCode |int   |状态码  |
+
+ **备注** 
+
+- 更多返回错误代码请看错误代码描述
