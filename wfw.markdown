@@ -579,7 +579,7 @@
 
 |参数名|必选|类型|说明|
 |:----    |:---|:----- |-----   |
-| id |是  |int |id   |
+| id |是  |int |角色id   |
 | roleName |否  |string |角色名   |
 | createTime |否  |string |创建时间   |
 | createUser |否  |string |创建用户   |
@@ -623,7 +623,7 @@
 
 |参数名|必选|类型|说明|
 |:----    |:---|:----- |-----   |
-| id |是  |int |id   |
+| id |是  |int |角色id   |
 | roleName |否  |string |角色名   |
 | createTime |否  |string |创建时间   |
 | createUser |否  |string |创建用户   |
@@ -667,7 +667,7 @@
 
 |参数名|必选|类型|说明|
 |:----    |:---|:----- |-----   |
-| id |是  |int |id   |
+| id |是  |int |角色id   |
 
  **返回示例**
 
