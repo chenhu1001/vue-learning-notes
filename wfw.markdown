@@ -507,13 +507,13 @@
 | trueName |否  |string |真实姓名   |
 | nickName |否  |string |昵称   |
 | mobile |否  |string |手机号   |
-| detailAddress |否  |int |详细地址   |
+| detailAddress |否  |string |详细地址   |
 | email |否  |string |电子邮箱   |
 | qq |否  |string |QQ   |
-| wechat |否  |int |微信   |
+| wechat |否  |string |微信   |
 | status |否  |int |状态   |
-| groupids |否  |int |组织id组   |
-| roleids |否  |int |角色id组   |
+| groupids |否  |string |组织id组   |
+| roleids |否  |string |角色id组   |
 
  **返回示例**
 
