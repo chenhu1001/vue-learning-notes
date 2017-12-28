@@ -705,7 +705,7 @@
 - 删除角色接口
 
 **请求URL：** 
-- ` http://xx.com/role/delete `
+- ` http://xx.com/role/deleteRoles `
   
 **请求方式：**
 - POST 
@@ -714,7 +714,7 @@
 
 |参数名|必选|类型|说明|
 |:----    |:---|:----- |-----   |
-| id |是  |int |角色id   |
+| roleIds |是  |string |角色ids   |
 
  **返回示例**
 
