@@ -734,3 +734,51 @@
  **备注** 
 
 - 更多返回错误代码请看错误代码描述
+
+## 13、查询角色
+**描述：** 
+
+- 查询角色接口
+
+**请求URL：** 
+- ` http://xx.com/role/getRoleInfoById `
+  
+**请求方式：**
+- POST 
+
+**参数：** 
+
+|参数名|必选|类型|说明|
+|:----    |:---|:----- |-----   |
+| id |是  |int |角色id   |
+
+ **返回示例**
+
+``` 
+{
+  "data": {
+    "createTime": 1513731985000,
+    "createUser": "admin",
+    "description": "实现具体功能",
+    "id": 3,
+    "isSystemRole": 1,
+    "modifyTime": 1513818374000,
+    "modifyUser": "admin",
+    "roleName": "开发人员",
+    "status": 1
+  },
+  "msg": "操作成功",
+  "statusCode": "0"
+}
+```
+
+ **返回参数说明** 
+
+|参数名|类型|说明|
+|:-----  |:-----|-----                           |
+| statusCode |int   |状态码  |
+| msg |string   |状态信息  |
+
+ **备注** 
+
+- 更多返回错误代码请看错误代码描述
