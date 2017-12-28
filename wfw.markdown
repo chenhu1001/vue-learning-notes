@@ -1050,3 +1050,139 @@
  **备注** 
 
 - 更多返回错误代码请看错误代码描述
+
+## 19、更新用户状态
+**描述：** 
+
+- 更新用户状态接口
+
+**请求URL：** 
+- ` http://xx.com/user/updateUserStatus `
+  
+**请求方式：**
+- POST 
+
+**参数：** 
+
+|参数名|必选|类型|说明|
+|:----    |:---|:----- |-----   |
+| userIds |是  |string |用户ids   |
+| status |是  |int |状态-0为禁用-1为启用   |
+
+ **返回示例**
+
+``` 
+{
+  "msg": "操作成功",
+  "statusCode": "0"
+}
+```
+
+ **返回参数说明** 
+
+|参数名|类型|说明|
+|:-----  |:-----|-----                           |
+| statusCode |int   |状态码  |
+| msg |string   |状态信息  |
+
+ **备注** 
+
+- 更多返回错误代码请看错误代码描述
+
+## 20、更新密码
+**描述：** 
+
+- 清空角色用户接口
+
+**请求URL：** 
+- ` http://xx.com/userRole/emptyRoleUser `
+  
+**请求方式：**
+- POST 
+
+**参数：** 
+
+管理员修改密码  
+
+|参数名|必选|类型|说明|
+|:----    |:---|:----- |-----   |
+| modifyPwdType |是  |int |固定为0   |
+| passWord |是  |string |密码   |
+| id |是  |int |用户id   |
+
+用户自己修改密码
+
+|参数名|必选|类型|说明|
+|:----    |:---|:----- |-----   |
+| modifyPwdType |是  |int |固定为1   |
+| passWord |是  |string |原密码   |
+| id |是  |int |用户id   |
+| newPassword |是  |string |新密码   |
+
+ **返回示例**
+
+``` 
+{
+  "msg": "操作成功",
+  "statusCode": "0"
+}
+```
+
+ **返回参数说明** 
+
+|参数名|类型|说明|
+|:-----  |:-----|-----                           |
+| statusCode |int   |状态码  |
+| msg |string   |状态信息  |
+
+ **备注** 
+
+- 更多返回错误代码请看错误代码描述
+
+## 21、修改用户
+**描述：** 
+
+- 修改用户接口
+
+**请求URL：** 
+- ` http://xx.com/user/updateUserInfo `
+  
+**请求方式：**
+- POST 
+
+**参数：** 
+
+|参数名|必选|类型|说明|
+|:----    |:---|:----- |-----   |
+| id |是  |int |用户id   |
+| userName |否  |string |用户名   |
+| trueName |否  |string |真实姓名   |
+| nickName |否  |string |昵称   |
+| mobile |否  |string |手机号   |
+| detailAddress |否  |string |详细地址   |
+| email |否  |string |电子邮箱   |
+| qq |否  |string |QQ   |
+| wechat |否  |string |微信   |
+| status |否  |int |状态   |
+| groupids |否  |string |组织id组   |
+| roleids |否  |string |角色id组   |
+
+ **返回示例**
+
+``` 
+{
+  "msg": "操作成功",
+  "statusCode": "0"
+}
+```
+
+ **返回参数说明** 
+
+|参数名|类型|说明|
+|:-----  |:-----|-----                           |
+| statusCode |int   |状态码  |
+| msg |string   |状态信息  |
+
+ **备注** 
+
+- 更多返回错误代码请看错误代码描述
