@@ -782,3 +782,189 @@
  **备注** 
 
 - 更多返回错误代码请看错误代码描述
+
+## 14、角色用户列表
+**描述：** 
+
+- 角色用户列表接口
+
+**请求URL：** 
+- ` http://xx.com/userRole/getRoleUserList `
+  
+**请求方式：**
+- POST 
+
+**参数：** 
+
+|参数名|必选|类型|说明|
+|:----    |:---|:----- |-----   |
+| id |是  |int |角色id   |
+
+ **返回示例**
+
+``` 
+{
+  "data": [
+    {
+      "createTime": "2017-12-14 08:57:20",
+      "createUser": "admin",
+      "detailAddress": "成都市天府新区",
+      "email": "admin@tianfugroup.com",
+      "id": 1,
+      "mobile": "2147483647",
+      "modifyTime": "2017-12-21 08:57:32",
+      "modifyUser": "admin",
+      "nickName": "administrator",
+      "passWord": "admin",
+      "qq": "567894321",
+      "status": 1,
+      "trueName": "administrator",
+      "userName": "admin",
+      "wechat": "admin003"
+    },
+    {
+      "createTime": "2017-12-27 09:18:53",
+      "createUser": "admin",
+      "detailAddress": "成都市青羊区",
+      "email": "jie.liu@tianfugroup.com",
+      "id": 170,
+      "mobile": "13666668899",
+      "modifyTime": "2017-12-27 09:18:45",
+      "modifyUser": "admin",
+      "nickName": "jackYao",
+      "passWord": "123456",
+      "qq": "277139277",
+      "status": 2,
+      "trueName": "刘杰",
+      "userName": "liuj",
+      "wechat": "yao277"
+    }
+  ],
+  "msg": "操作成功",
+  "statusCode": "0"
+}
+```
+
+ **返回参数说明** 
+
+|参数名|类型|说明|
+|:-----  |:-----|-----                           |
+| statusCode |int   |状态码  |
+| msg |string   |状态信息  |
+
+ **备注** 
+
+- 更多返回错误代码请看错误代码描述
+
+## 15、删除角色用户
+**描述：** 
+
+- 删除角色用户接口
+
+**请求URL：** 
+- ` http://xx.com/userRole/deleteRoleUser `
+  
+**请求方式：**
+- POST 
+
+**参数：** 
+
+|参数名|必选|类型|说明|
+|:----    |:---|:----- |-----   |
+| roleId |是  |int |角色id   |
+| userId |是  |int |用户id   |
+
+ **返回示例**
+
+``` 
+{
+  "msg": "操作成功",
+  "statusCode": "0"
+}
+```
+
+ **返回参数说明** 
+
+|参数名|类型|说明|
+|:-----  |:-----|-----                           |
+| statusCode |int   |状态码  |
+| msg |string   |状态信息  |
+
+ **备注** 
+
+- 更多返回错误代码请看错误代码描述
+
+## 16、添加角色用户
+**描述：** 
+
+- 添加角色用户接口
+
+**请求URL：** 
+- ` http://xx.com/userRole/addRoleUser `
+  
+**请求方式：**
+- POST 
+
+**参数：** 
+
+|参数名|必选|类型|说明|
+|:----    |:---|:----- |-----   |
+| roleId |是  |int |角色id   |
+| userId |是  |int |用户id   |
+
+ **返回示例**
+
+``` 
+{
+  "msg": "操作成功",
+  "statusCode": "0"
+}
+```
+
+ **返回参数说明** 
+
+|参数名|类型|说明|
+|:-----  |:-----|-----                           |
+| statusCode |int   |状态码  |
+| msg |string   |状态信息  |
+
+ **备注** 
+
+- 更多返回错误代码请看错误代码描述
+
+## 17、清空角色用户
+**描述：** 
+
+- 清空角色用户接口
+
+**请求URL：** 
+- ` http://xx.com/userRole/emptyRoleUser `
+  
+**请求方式：**
+- POST 
+
+**参数：** 
+
+|参数名|必选|类型|说明|
+|:----    |:---|:----- |-----   |
+| roleId |是  |int |角色id   |
+
+ **返回示例**
+
+``` 
+{
+  "msg": "操作成功",
+  "statusCode": "0"
+}
+```
+
+ **返回参数说明** 
+
+|参数名|类型|说明|
+|:-----  |:-----|-----                           |
+| statusCode |int   |状态码  |
+| msg |string   |状态信息  |
+
+ **备注** 
+
+- 更多返回错误代码请看错误代码描述
