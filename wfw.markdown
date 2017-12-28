@@ -551,6 +551,9 @@
 |:----    |:---|:----- |-----   |
 | pageSize |是  |int |分页大小   |
 | currentPage |是  |int |当前分页   |
+| selectAll |否  |string |全部   |
+| roleName |否  |string |角色名   |
+| createUser |否  |string |创建用户   |
 
  **返回示例**
 
