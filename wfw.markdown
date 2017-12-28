@@ -1188,8 +1188,324 @@
 - 更多返回错误代码请看错误代码描述
 
 ## 22、查询用户组织角色信息
+**描述：** 
+
+- 查询用户组织角色信息接口
+
+**请求URL：** 
+- ` http://xx.com/user/getUserInfoByUserId `
+  
+**请求方式：**
+- POST 
+
+**参数：** 
+
+|参数名|必选|类型|说明|
+|:----    |:---|:----- |-----   |
+| id |是  |int |用户id   |
+
+ **返回示例**
+
+``` 
+{
+  "data": {
+    "checkedRoleids": [
+      {
+        "id": 1,
+        "roleName": "总经理1"
+      },
+      {
+        "id": 3,
+        "roleName": "开发人员1"
+      }
+    ],
+    "roleids": [
+      {
+        "createTime": 1513645552000,
+        "createUser": "chenhu1",
+        "description": "协助总经理",
+        "id": 2,
+        "isSystemRole": 0,
+        "modifyTime": 1513731945000,
+        "modifyUser": "admin",
+        "roleName": "总监",
+        "status": 1
+      }
+    ],
+    "groupids": [
+      {
+        "id": 1,
+        "organizationName": "科技信息事业部"
+      },
+      {
+        "id": 2,
+        "organizationName": "互联网金融事业部"
+      }
+    ]
+  },
+  "msg": "操作成功",
+  "statusCode": "0"
+}
+```
+
+ **返回参数说明** 
+
+|参数名|类型|说明|
+|:-----  |:-----|-----                           |
+| statusCode |int   |状态码  |
+| msg |string   |状态信息  |
+
+ **备注** 
+
+- 更多返回错误代码请看错误代码描述
+
 ## 23、新增权限
+**描述：** 
+
+- 新增权限接口
+
+**请求URL：** 
+- ` http://xx.com/permission/savePermission `
+  
+**请求方式：**
+- POST 
+
+**参数：** 
+
+|参数名|必选|类型|说明|
+|:----    |:---|:----- |-----   |
+| permissionName |是  |string |权限名   |
+| parentId |是  |int |父id   |
+| status |是  |int |状态   |
+| permissionType |否  |int |权限类型   |
+| isMenu |否  |int |是否是菜单   |
+| url |否  |string |路径   |
+| moduleId |否  |int |模块id   |
+| isSystemPermission |否  |int |是否系统权限   |
+
+ **返回示例**
+
+``` 
+{
+  "msg": "操作成功",
+  "statusCode": "0"
+}
+```
+
+ **返回参数说明** 
+
+|参数名|类型|说明|
+|:-----  |:-----|-----                           |
+| statusCode |int   |状态码  |
+| msg |string   |状态信息  |
+
+ **备注** 
+
+- 更多返回错误代码请看错误代码描述
+
 ## 24、更新权限
+**描述：** 
+
+- 更新权限接口
+
+**请求URL：** 
+- ` http://xx.com/permission/updatePermission `
+  
+**请求方式：**
+- POST 
+
+**参数：** 
+
+|参数名|必选|类型|说明|
+|:----    |:---|:----- |-----   |
+| id |是  |int |权限id   |
+| permissionName |是  |string |权限名   |
+| parentId |是  |int |父id   |
+| status |是  |int |状态   |
+| permissionType |否  |int |权限类型   |
+| isMenu |否  |int |是否是菜单   |
+| url |否  |string |路径   |
+| moduleId |否  |int |模块id   |
+| isSystemPermission |否  |int |是否系统权限   |
+
+ **返回示例**
+
+``` 
+{
+  "msg": "操作成功",
+  "statusCode": "0"
+}
+```
+
+ **返回参数说明** 
+
+|参数名|类型|说明|
+|:-----  |:-----|-----                           |
+| statusCode |int   |状态码  |
+| msg |string   |状态信息  |
+
+ **备注** 
+
+- 更多返回错误代码请看错误代码描述
+
 ## 25、删除权限
+**描述：** 
+
+- 删除权限接口
+
+**请求URL：** 
+- ` http://xx.com/permission/deletePermission `
+  
+**请求方式：**
+- POST 
+
+**参数：** 
+
+|参数名|必选|类型|说明|
+|:----    |:---|:----- |-----   |
+| ids |是  |int |权限ids   |
+
+ **返回示例**
+
+``` 
+{
+  "msg": "操作成功",
+  "statusCode": "0"
+}
+```
+
+ **返回参数说明** 
+
+|参数名|类型|说明|
+|:-----  |:-----|-----                           |
+| statusCode |int   |状态码  |
+| msg |string   |状态信息  |
+
+ **备注** 
+
+- 更多返回错误代码请看错误代码描述
+
 ## 26、查询权限
+**描述：** 
+
+- 查询全新接口
+
+**请求URL：** 
+- ` http://xx.com/permission/selectEntityOne `
+  
+**请求方式：**
+- POST 
+
+**参数：** 
+
+|参数名|必选|类型|说明|
+|:----    |:---|:----- |-----   |
+| id |是  |int |权限id   |
+
+ **返回示例**
+
+``` 
+{
+  "data": {
+    "createTime": "2017-12-20 09:24:01",
+    "createUser": "admin",
+    "id": 1,
+    "isMenu": 1,
+    "isSystemPermission": 1,
+    "modifyTime": "2017-12-21 09:24:11",
+    "modifyUser": "admin",
+    "moduleId": 1,
+    "parentId": 0,
+    "permissionName": "用户管理",
+    "permissionType": 1,
+    "status": 1,
+    "url": "#"
+  },
+  "msg": "操作成功",
+  "statusCode": "0"
+}
+```
+
+ **返回参数说明** 
+
+|参数名|类型|说明|
+|:-----  |:-----|-----                           |
+| statusCode |int   |状态码  |
+| msg |string   |状态信息  |
+
+ **备注** 
+
+- 更多返回错误代码请看错误代码描述
+
 ## 27、权限树
+**描述：** 
+
+- 权限树接口
+
+**请求URL：** 
+- ` http://xx.com/permission/permissionTree `
+  
+**请求方式：**
+- POST 
+
+**参数：** 
+无
+
+ **返回示例**
+
+``` 
+{
+  "data": [
+    {
+      "children": [
+        {
+          "children": [],
+          "id": 2,
+          "label": "新建用户"
+        },
+        {
+          "children": [],
+          "id": 3,
+          "label": "修改用户"
+        },
+        {
+          "children": [],
+          "id": 4,
+          "label": "删除用户1"
+        }
+      ],
+      "id": 1,
+      "label": "用户管理"
+    },
+    {
+      "children": [
+        {
+          "children": [],
+          "id": 6,
+          "label": "新建组织"
+        },
+        {
+          "children": [],
+          "id": 7,
+          "label": "修改组织"
+        }
+      ],
+      "id": 5,
+      "label": "组织管理"
+    }
+  ],
+  "msg": "操作成功",
+  "statusCode": "0"
+}
+```
+
+ **返回参数说明** 
+
+|参数名|类型|说明|
+|:-----  |:-----|-----                           |
+| statusCode |int   |状态码  |
+| msg |string   |状态信息  |
+
+ **备注** 
+
+- 更多返回错误代码请看错误代码描述
