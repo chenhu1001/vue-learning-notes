@@ -971,3 +971,82 @@
  **备注** 
 
 - 更多返回错误代码请看错误代码描述
+
+## 18、组织树
+**描述：** 
+
+- 组织树接口
+
+**请求URL：** 
+- ` http://xx.com/organization/organizationTree `
+  
+**请求方式：**
+- POST 
+
+**参数：** 
+无
+
+ **返回示例**
+
+``` 
+{
+  "data": [
+    {
+      "children": [
+        {
+          "children": [],
+          "id": 4,
+          "label": "综合部",
+          "pid": 1
+        },
+        {
+          "children": [],
+          "id": 5,
+          "label": "项目部",
+          "pid": 1
+        },
+        {
+          "children": [],
+          "id": 6,
+          "label": "技术部",
+          "pid": 1
+        },
+        {
+          "children": [],
+          "id": 8,
+          "label": "test",
+          "pid": 1
+        }
+      ],
+      "id": 1,
+      "label": "科技信息事业部",
+      "pid": 0
+    },
+    {
+      "children": [],
+      "id": 2,
+      "label": "互联网金融事业部",
+      "pid": 0
+    },
+    {
+      "children": [],
+      "id": 3,
+      "label": "汽车金融事业部",
+      "pid": 0
+    }
+  ],
+  "msg": "操作成功",
+  "statusCode": "0"
+}
+```
+
+ **返回参数说明** 
+
+|参数名|类型|说明|
+|:-----  |:-----|-----                           |
+| statusCode |int   |状态码  |
+| msg |string   |状态信息  |
+
+ **备注** 
+
+- 更多返回错误代码请看错误代码描述
