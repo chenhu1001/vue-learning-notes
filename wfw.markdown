@@ -1853,10 +1853,10 @@
 
 - 更多返回错误代码请看错误代码描述
 
-## 35、移动用户组织
+## 35、创建用户and添加组织
 **描述：** 
 
-- 移动用户组织接口
+- 创建用户and添加组织接口
 
 **请求URL：** 
 - ` http://xx.com/organization/createUserToOrganation `
@@ -1868,7 +1868,23 @@
 
 |参数名|必选|类型|说明|
 |:----    |:---|:----- |-----   |
-| id |是  |int |权限id   |
+
+
+|参数名|必选|类型|说明|
+|:----    |:---|:----- |-----   |
+| groupids |是  |int |组织id   |
+| userName |是  |string |用户名   |
+| password |是  |string |密码   |
+| trueName |否  |string |真实姓名   |
+| nickName |否  |string |昵称   |
+| mobile |否  |string |手机号   |
+| detailAddress |否  |string |详细地址   |
+| email |否  |string |电子邮箱   |
+| qq |否  |string |QQ   |
+| wechat |否  |string |微信   |
+| status |否  |int |状态   |
+| groupids |否  |string |组织id组   |
+| roleids |否  |string |角色id组   |
 
  **返回示例**
 
