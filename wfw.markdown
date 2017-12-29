@@ -1509,3 +1509,449 @@
  **备注** 
 
 - 更多返回错误代码请看错误代码描述
+
+## 28、获取组织树子节点
+**描述：** 
+
+- 获取组织树子节点接口
+
+**请求URL：** 
+- ` http://xx.com/organization/getChildrenNode `
+  
+**请求方式：**
+- POST 
+
+**参数：** 
+
+|参数名|必选|类型|说明|
+|:----    |:---|:----- |-----   |
+| id |是  |int |组织id   |
+
+ **返回示例**
+
+``` 
+{
+  "data": [
+    {
+      "abbreviation": "项目部",
+      "createTime": "2017-12-20 09:16:15",
+      "createUser": "admin",
+      "description": "负责科技部项目相关",
+      "id": 5,
+      "modifyTime": "2017-12-21 09:16:21",
+      "modifyUser": "admin",
+      "orderNum": 2,
+      "organizationName": "项目部",
+      "parentId": 1,
+      "status": 1
+    },
+    {
+      "abbreviation": "技术部",
+      "createTime": "2017-12-20 09:16:15",
+      "createUser": "admin",
+      "description": "负责科技部研发相关",
+      "id": 6,
+      "modifyTime": "2017-12-21 09:16:21",
+      "modifyUser": "admin",
+      "orderNum": 3,
+      "organizationName": "技术部",
+      "parentId": 1,
+      "status": 1
+    }
+  ],
+  "msg": "操作成功",
+  "statusCode": "0"
+}
+```
+
+ **返回参数说明** 
+
+|参数名|类型|说明|
+|:-----  |:-----|-----                           |
+| statusCode |int   |状态码  |
+| msg |string   |状态信息  |
+
+ **备注** 
+
+- 更多返回错误代码请看错误代码描述
+
+## 29、新增组织
+**描述：** 
+
+- 新增组织接口
+
+**请求URL：** 
+- ` http://xx.com/organization/addOrganization `
+  
+**请求方式：**
+- POST 
+
+**参数：** 
+
+|参数名|必选|类型|说明|
+|:----    |:---|:----- |-----   |
+| id |是  |int |组织id   |
+| parentId |是  |int |父id   |
+| organizationName |是  |string |组织名   |
+| description |否  |string |组织描述   |
+
+ **返回示例**
+
+``` 
+{
+  "msg": "操作成功",
+  "statusCode": "0"
+}
+```
+
+ **返回参数说明** 
+
+|参数名|类型|说明|
+|:-----  |:-----|-----                           |
+| statusCode |int   |状态码  |
+| msg |string   |状态信息  |
+
+ **备注** 
+
+- 更多返回错误代码请看错误代码描述
+
+## 30、删除组织
+**描述：** 
+
+- 删除组织接口
+
+**请求URL：** 
+- ` http://xx.com/organization/batchDeleteOrganization `
+  
+**请求方式：**
+- POST 
+
+**参数：** 
+
+|参数名|必选|类型|说明|
+|:----    |:---|:----- |-----   |
+| ids |是  |string |组织ids   |
+
+ **返回示例**
+
+``` 
+{
+  "msg": "操作成功",
+  "statusCode": "0"
+}
+```
+
+ **返回参数说明** 
+
+|参数名|类型|说明|
+|:-----  |:-----|-----                           |
+| statusCode |int   |状态码  |
+| msg |string   |状态信息  |
+
+ **备注** 
+
+- 更多返回错误代码请看错误代码描述
+
+## 31、更新组织
+**描述：** 
+
+- 更新组织接口
+
+**请求URL：** 
+- ` http://xx.com/organization/updateOrganization `
+  
+**请求方式：**
+- POST 
+
+**参数：** 
+
+|参数名|必选|类型|说明|
+|:----    |:---|:----- |-----   |
+| id |是  |int |组织id   |
+| organizationName |否  |string |组织名   |
+| description |否  |string |组织描述   |
+
+ **返回示例**
+
+``` 
+{
+  "msg": "操作成功",
+  "statusCode": "0"
+}
+```
+
+ **返回参数说明** 
+
+|参数名|类型|说明|
+|:-----  |:-----|-----                           |
+| statusCode |int   |状态码  |
+| msg |string   |状态信息  |
+
+ **备注** 
+
+- 更多返回错误代码请看错误代码描述
+
+## 32、查询组织用户信息
+**描述：** 
+
+- 查询组织用户信息接口
+
+**请求URL：** 
+- ` http://xx.com/organization/getUserInfoListByOrganizationId `
+  
+**请求方式：**
+- POST 
+
+**参数：** 
+
+|参数名|必选|类型|说明|
+|:----    |:---|:----- |-----   |
+| id |是  |int |组织id   |
+| pageSize |是  |int |分页大小   |
+| currentPage |是  |int |当前页   |
+
+ **返回示例**
+
+``` 
+{
+  "data": {
+    "currentPage": 1,
+    "datas": [
+      {
+        "createTime": "2017-12-14 08:57:20",
+        "createUser": "admin",
+        "detailAddress": "成都市天府新区",
+        "email": "admin@tianfugroup.com",
+        "mobile": "2147483647",
+        "nickName": "administrator",
+        "qq": "567894321",
+        "status": 1,
+        "trueName": "administrator",
+        "userName": "admin",
+        "wechat": "admin003"
+      },
+      {
+        "createTime": "2017-12-27 09:18:53",
+        "createUser": "admin",
+        "detailAddress": "成都市金牛区",
+        "email": "xianlin.yao@tianfugroup.com",
+        "mobile": "13666668899",
+        "nickName": "jackYao",
+        "qq": "277139277",
+        "status": 2,
+        "trueName": "姚先林",
+        "userName": "yaoxianlin",
+        "wechat": "yao277"
+      },
+      {
+        "createTime": "2017-12-27 14:05:33",
+        "createUser": "admin",
+        "detailAddress": "成都市金牛区",
+        "email": "xianlin.yao@tianfugroup.com",
+        "mobile": "13666668899",
+        "nickName": "jackYao",
+        "qq": "277139277",
+        "status": 0,
+        "trueName": "刘杰",
+        "userName": "lili",
+        "wechat": "yao277"
+      }
+    ],
+    "pageSize": 10,
+    "totals": 3
+  },
+  "msg": "操作成功",
+  "statusCode": "0"
+}
+```
+
+ **返回参数说明** 
+
+|参数名|类型|说明|
+|:-----  |:-----|-----                           |
+| statusCode |int   |状态码  |
+| msg |string   |状态信息  |
+
+ **备注** 
+
+- 更多返回错误代码请看错误代码描述
+
+## 33、组织中新增用户
+**描述：** 
+
+- 组织中新增用户接口
+
+**请求URL：** 
+- ` http://xx.com/organization/addUserToOrganation `
+  
+**请求方式：**
+- POST 
+
+**参数：** 
+
+|参数名|必选|类型|说明|
+|:----    |:---|:----- |-----   |
+| groupids |是  |int |组织id   |
+| userIds |是  |string |用户ids   |
+
+ **返回示例**
+
+``` 
+{
+  "msg": "操作成功",
+  "statusCode": "0"
+}
+```
+
+ **返回参数说明** 
+
+|参数名|类型|说明|
+|:-----  |:-----|-----                           |
+| statusCode |int   |状态码  |
+| msg |string   |状态信息  |
+
+ **备注** 
+
+- 更多返回错误代码请看错误代码描述
+
+## 34、改变组织管理员
+**描述：** 
+
+- 查询全新接口
+
+**请求URL：** 
+- ` http://xx.com/permission/selectEntityOne `
+  
+**请求方式：**
+- POST 
+
+**参数：** 
+
+|参数名|必选|类型|说明|
+|:----    |:---|:----- |-----   |
+| id |是  |int |权限id   |
+
+ **返回示例**
+
+``` 
+{
+  "data": {
+    "createTime": "2017-12-20 09:24:01",
+    "createUser": "admin",
+    "id": 1,
+    "isMenu": 1,
+    "isSystemPermission": 1,
+    "modifyTime": "2017-12-21 09:24:11",
+    "modifyUser": "admin",
+    "moduleId": 1,
+    "parentId": 0,
+    "permissionName": "用户管理",
+    "permissionType": 1,
+    "status": 1,
+    "url": "#"
+  },
+  "msg": "操作成功",
+  "statusCode": "0"
+}
+```
+
+ **返回参数说明** 
+
+|参数名|类型|说明|
+|:-----  |:-----|-----                           |
+| statusCode |int   |状态码  |
+| msg |string   |状态信息  |
+
+ **备注** 
+
+- 更多返回错误代码请看错误代码描述
+
+## 35、移动用户组织
+**描述：** 
+
+- 查询全新接口
+
+**请求URL：** 
+- ` http://xx.com/permission/selectEntityOne `
+  
+**请求方式：**
+- POST 
+
+**参数：** 
+
+|参数名|必选|类型|说明|
+|:----    |:---|:----- |-----   |
+| id |是  |int |权限id   |
+
+ **返回示例**
+
+``` 
+{
+  "data": {
+    "createTime": "2017-12-20 09:24:01",
+    "createUser": "admin",
+    "id": 1,
+    "isMenu": 1,
+    "isSystemPermission": 1,
+    "modifyTime": "2017-12-21 09:24:11",
+    "modifyUser": "admin",
+    "moduleId": 1,
+    "parentId": 0,
+    "permissionName": "用户管理",
+    "permissionType": 1,
+    "status": 1,
+    "url": "#"
+  },
+  "msg": "操作成功",
+  "statusCode": "0"
+}
+```
+
+ **返回参数说明** 
+
+|参数名|类型|说明|
+|:-----  |:-----|-----                           |
+| statusCode |int   |状态码  |
+| msg |string   |状态信息  |
+
+ **备注** 
+
+- 更多返回错误代码请看错误代码描述
+
+## 36、移动组织
+**描述：** 
+
+- 移动组织接口
+
+**请求URL：** 
+- ` http://xx.com/organization/moveOrganation `
+  
+**请求方式：**
+- POST 
+
+**参数：** 
+
+|参数名|必选|类型|说明|
+|:----    |:---|:----- |-----   |
+| id |是  |int |组织id   |
+| parentId |是  |int |父id   |
+
+ **返回示例**
+
+``` 
+{
+  "msg": "操作成功",
+  "statusCode": "0"
+}
+```
+
+ **返回参数说明** 
+
+|参数名|类型|说明|
+|:-----  |:-----|-----                           |
+| statusCode |int   |状态码  |
+| msg |string   |状态信息  |
+
+ **备注** 
+
+- 更多返回错误代码请看错误代码描述
