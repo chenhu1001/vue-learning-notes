@@ -1817,10 +1817,10 @@
 ## 34、改变组织管理员
 **描述：** 
 
-- 查询全新接口
+- 改变组织管理员接口
 
 **请求URL：** 
-- ` http://xx.com/permission/selectEntityOne `
+- ` http://xx.com/organization/changeUserToAdmin `
   
 **请求方式：**
 - POST 
@@ -1829,27 +1829,14 @@
 
 |参数名|必选|类型|说明|
 |:----    |:---|:----- |-----   |
-| id |是  |int |权限id   |
+| groupids |是  |int | 组织id   |
+| userIds |是  |string |用户ids   |
+| isAdmin |是  |int |是否组织管理员   |
 
  **返回示例**
 
 ``` 
 {
-  "data": {
-    "createTime": "2017-12-20 09:24:01",
-    "createUser": "admin",
-    "id": 1,
-    "isMenu": 1,
-    "isSystemPermission": 1,
-    "modifyTime": "2017-12-21 09:24:11",
-    "modifyUser": "admin",
-    "moduleId": 1,
-    "parentId": 0,
-    "permissionName": "用户管理",
-    "permissionType": 1,
-    "status": 1,
-    "url": "#"
-  },
   "msg": "操作成功",
   "statusCode": "0"
 }
@@ -1869,10 +1856,10 @@
 ## 35、移动用户组织
 **描述：** 
 
-- 查询全新接口
+- 移动用户组织接口
 
 **请求URL：** 
-- ` http://xx.com/permission/selectEntityOne `
+- ` http://xx.com/organization/createUserToOrganation `
   
 **请求方式：**
 - POST 
@@ -1887,21 +1874,6 @@
 
 ``` 
 {
-  "data": {
-    "createTime": "2017-12-20 09:24:01",
-    "createUser": "admin",
-    "id": 1,
-    "isMenu": 1,
-    "isSystemPermission": 1,
-    "modifyTime": "2017-12-21 09:24:11",
-    "modifyUser": "admin",
-    "moduleId": 1,
-    "parentId": 0,
-    "permissionName": "用户管理",
-    "permissionType": 1,
-    "status": 1,
-    "url": "#"
-  },
   "msg": "操作成功",
   "statusCode": "0"
 }
