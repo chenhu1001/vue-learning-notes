@@ -1955,3 +1955,181 @@
  **备注** 
 
 - 更多返回错误代码请看错误代码描述
+
+## 37、新增or更新角色权限
+**描述：** 
+
+- 新增or更新角色权限接口
+
+**请求URL：** 
+- ` http://xx.com/rolePermission/updateRolePermission `
+  
+**请求方式：**
+- POST 
+
+**参数：** 
+
+|参数名|必选|类型|说明|
+|:----    |:---|:----- |-----   |
+| roleId |是  |int |角色id   |
+| permissionIds |是  |string |权限ids  |
+
+ **返回示例**
+
+``` 
+{
+  "msg": "操作成功",
+  "statusCode": "0"
+}
+```
+
+ **返回参数说明** 
+
+|参数名|类型|说明|
+|:-----  |:-----|-----                           |
+| statusCode |int   |状态码  |
+| msg |string   |状态信息  |
+
+ **备注** 
+
+- 更多返回错误代码请看错误代码描述
+
+## 38、模块菜单
+**描述：** 
+
+- 模块菜单接口
+
+**请求URL：** 
+- ` http://xx.com/rolePermission/selectMenu `
+  
+**请求方式：**
+- POST 
+
+**参数：** 
+无
+
+ **返回示例**
+
+``` 
+{
+  "data": {
+    "menus": [
+      {
+        "id": 7,
+        "moduleName": "用户管理1"
+      },
+      {
+        "id": 10,
+        "moduleName": "用户管理4"
+      },
+      {
+        "id": 1,
+        "moduleName": "用户管理"
+      },
+      {
+        "id": 2,
+        "moduleName": "组织管理"
+      },
+      {
+        "id": 3,
+        "moduleName": "角色管理"
+      },
+      {
+        "id": 4,
+        "moduleName": "模块管理"
+      },
+      {
+        "id": 5,
+        "moduleName": "权限管理"
+      },
+      {
+        "id": 6,
+        "moduleName": "系统管理"
+      }
+    ]
+  },
+  "msg": "操作成功",
+  "statusCode": "0"
+}
+```
+
+ **返回参数说明** 
+
+|参数名|类型|说明|
+|:-----  |:-----|-----                           |
+| statusCode |int   |状态码  |
+| msg |string   |状态信息  |
+
+ **备注** 
+
+- 更多返回错误代码请看错误代码描述
+
+## 39、权限树
+**描述：** 
+
+- 权限树接口
+
+**请求URL：** 
+- ` http://xx.com/organization/moveOrganation `
+  
+**请求方式：**
+- POST 
+
+**参数：** 
+
+|参数名|必选|类型|说明|
+|:----    |:---|:----- |-----   |
+| roleId |是  |int |角色id   |
+| moduleId |是  |int |模块id   |
+
+ **返回示例**
+
+``` 
+{
+  "data": {
+    "checkedKeys": [
+      "2",
+      "3",
+      "4"
+    ],
+    "checkedPermissionList": [
+      {
+        "children": [
+          {
+            "children": [],
+            "id": 2,
+            "label": "新建用户"
+          },
+          {
+            "children": [],
+            "id": 3,
+            "label": "修改用户"
+          },
+          {
+            "children": [],
+            "id": 4,
+            "label": "删除用户1"
+          }
+        ],
+        "id": 1,
+        "label": "用户管理"
+      }
+    ],
+    "moduleId": 1,
+    "roleId": 1
+  },
+  "msg": "操作成功",
+  "statusCode": "0"
+}
+```
+
+ **返回参数说明** 
+
+|参数名|类型|说明|
+|:-----  |:-----|-----                           |
+| statusCode |int   |状态码  |
+| msg |string   |状态信息  |
+
+ **备注** 
+
+- 更多返回错误代码请看错误代码描述
