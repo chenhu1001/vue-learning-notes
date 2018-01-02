@@ -296,3 +296,113 @@ watch: {
   }
 }
 ```
+
+## 6、使用prop传递数据（静态数据传递）
+子组件
+
+```
+Vue.component('child', {
+    // 声明props
+    props: ['message'],
+    
+    // 就像data一样，prop也可以在模块中使用
+    template:'<span>{{message}}</span>'
+}
+```
+
+父组件
+
+```
+<child message="hello!"></child>
+```
+
+## 7、传递prop数据时，需做相应转换
+子组件
+
+```
+props: ['myMessage']
+```
+
+父组件
+
+```
+<child my-message="hello"></child>
+```
+
+## 8、动态prop
+父组件
+
+```
+<child v-bind:my-message="parentMsg"></child>
+```
+
+等价于
+
+```
+<child :my-message="parentMsg"></child>
+```
+
+动态prop传递（传递对象）
+
+```
+todo: {
+    text: 'Lean Vue',
+    isComplete: false
+}
+```
+
+```
+<todo-item v-bind="todo"></todo-item>
+```
+
+等价于
+
+```
+<todo-item v-bind:text="todo.text" v-bind:is-complete="todo.isComplete"></to-item>
+```
+
+## 9、字面量语法VS动态语法
+```
+<!--传递了一个字符串"|"-->
+<comp some-prop="|"></comp>
+```
+
+```
+<!--传递真正的数值-->
+<comp v-bind:some-prop="|"></comp>
+```
+
+## 10、单向数据流
+* 定义局部变量
+
+```
+props: [''initialCounter]
+data: function() {
+    return {
+        counter: this.initalCounter
+    }
+}
+```
+
+* 定义一个计算属性
+
+```
+props: ['size']
+computed: {
+    normalizedSize: function () {
+        return this.size.trim().toLowerCase()
+        }
+}
+```
+
+## 11、prop验证
+我们可以为组件的prop指定验证规则，如果传入的数据不符合要求，vue会发出警告。
+
+## 12、非prop特性
+可直接把属性添加到组件上（不需要事先定义prop）
+
+```
+<bs-date-input data-3d-date-picker="true"></bs-date-input>
+```
+
+vue会合并属性，class属性会叠加。
