@@ -1067,7 +1067,7 @@
 |参数名|必选|类型|说明|
 |:----    |:---|:----- |-----   |
 | userIds |是  |string |用户ids   |
-| status |是  |int |状态-0为禁用-1为启用   |
+| status |是  |int |状态-0为删除-1为启用-2为停用   |
 
  **返回示例**
 
@@ -1095,7 +1095,7 @@
 - 清空角色用户接口
 
 **请求URL：** 
-- ` http://xx.com/userRole/emptyRoleUser `
+- ` http://xx.com/user/updatePassword `
   
 **请求方式：**
 - POST 
