@@ -989,51 +989,77 @@
 
 ``` 
 {
-  "data": [
-    {
-      "children": [
-        {
-          "children": [],
-          "id": 4,
-          "label": "综合部",
-          "pid": 1
-        },
-        {
-          "children": [],
-          "id": 5,
-          "label": "项目部",
-          "pid": 1
-        },
-        {
-          "children": [],
-          "id": 6,
-          "label": "技术部",
-          "pid": 1
-        },
-        {
-          "children": [],
-          "id": 8,
-          "label": "test",
-          "pid": 1
-        }
-      ],
-      "id": 1,
-      "label": "科技信息事业部",
-      "pid": 0
-    },
-    {
-      "children": [],
-      "id": 2,
-      "label": "互联网金融事业部",
-      "pid": 0
-    },
-    {
-      "children": [],
-      "id": 3,
-      "label": "汽车金融事业部",
-      "pid": 0
-    }
-  ],
+  "data": {
+    "datas": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [],
+                "id": 5,
+                "label": "法律合规部",
+                "pid": 2
+              },
+              {
+                "children": [],
+                "id": 6,
+                "label": "互联网金融事业部",
+                "pid": 2
+              }
+            ],
+            "id": 2,
+            "label": "天府银行",
+            "pid": 1
+          },
+          {
+            "children": [
+              {
+                "children": [],
+                "id": 8,
+                "label": "科技信息事业部",
+                "pid": 3
+              },
+              {
+                "children": [],
+                "id": 9,
+                "label": "矿业能源事业部",
+                "pid": 3
+              }
+            ],
+            "id": 3,
+            "label": "天府集团",
+            "pid": 1
+          },
+          {
+            "children": [
+              {
+                "children": [],
+                "id": 10,
+                "label": "风险合规部",
+                "pid": 4
+              },
+              {
+                "children": [],
+                "id": 11,
+                "label": "业务发展部",
+                "pid": 4
+              }
+            ],
+            "id": 4,
+            "label": "天府金租",
+            "pid": 1
+          }
+        ],
+        "id": 1,
+        "label": "三位一体",
+        "pid": 0
+      }
+    ],
+    "nodeDefaultCheckBox": [
+      1
+    ]
+  },
   "msg": "操作成功",
   "statusCode": "0"
 }
