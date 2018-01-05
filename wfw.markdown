@@ -620,7 +620,7 @@
 - 新增角色接口
 
 **请求URL：** 
-- ` http://xx.com/role/save `
+- ` http://xx.com/role/addRole `
   
 **请求方式：**
 - POST 
@@ -629,11 +629,10 @@
 
 |参数名|必选|类型|说明|
 |:----    |:---|:----- |-----   |
-| id |是  |int |角色id   |
-| roleName |否  |string |角色名   |
+| roleName |是  |string |角色名   |
 | createTime |否  |string |创建时间   |
 | createUser |否  |string |创建用户   |
-| description |否  |string |描述   |
+| description |是  |string |描述   |
 | isSystemRole |否  |int |是否系统角色   |
 | modifyTime |否  |string |修改时间   |
 | modifyUser |否  |string |修改用户   |
@@ -2117,6 +2116,77 @@
 |:-----  |:-----|-----                           |
 | statusCode |int   |状态码  |
 | msg |string   |状态信息  |
+
+ **备注** 
+
+- 更多返回错误代码请看错误代码描述
+
+## 40、角色列表（不分页）
+**描述：** 
+
+- 角色列表（不分页）接口
+
+**请求URL：** 
+- ` http://xx.com/role/getRoleListWithoutPage `
+  
+**请求方式：**
+- POST 
+
+**参数：** 
+无
+
+ **返回示例**
+
+``` 
+{
+  "data": [
+    {
+      "createTime": "2017-12-19 09:05:52",
+      "createUser": "chenhu1",
+      "description": "admin",
+      "id": 2,
+      "isSystemRole": 0,
+      "modifyTime": "2017-12-20 09:05:45",
+      "modifyUser": "admin",
+      "roleName": "Administrator",
+      "status": 1
+    },
+    {
+      "createTime": "2017-12-20 09:06:25",
+      "createUser": "admin",
+      "description": "实现具体功能",
+      "id": 3,
+      "isSystemRole": 1,
+      "modifyTime": "2017-12-21 09:06:14",
+      "modifyUser": "admin",
+      "roleName": "开发人员",
+      "status": 1
+    },
+    {
+      "description": "2",
+      "id": 9,
+      "roleName": "2",
+      "status": 1
+    },
+    {
+      "createTime": "2018-01-05 15:59:00",
+      "createUser": "admin",
+      "description": "3",
+      "id": 10,
+      "roleName": "3",
+      "status": 1
+    }
+  ],
+  "msg": "操作成功",
+  "statusCode": "0"
+}
+```
+
+ **返回参数说明** 
+
+|参数名|类型|说明|
+|:-----  |:-----|-----                           |
+| statusCode |int   |状态码  |
 
  **备注** 
 
