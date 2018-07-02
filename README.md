@@ -406,3 +406,6 @@ computed: {
 ```
 
 vue会合并属性，class属性会叠加。
+
+## 13、vue单页面，多路由，前进刷新，后退不刷新
+https://segmentfault.com/a/1190000012083511?_ea=2864002
