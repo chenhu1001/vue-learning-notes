@@ -409,3 +409,17 @@ vue会合并属性，class属性会叠加。
 
 ## 13、vue单页面，多路由，前进刷新，后退不刷新
 https://segmentfault.com/a/1190000012083511?_ea=2864002
+
+## 14、Mac搭建Vue开发环境
+```
+// 安装Homebrew
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+// 安装node.js 
+brew install nodejs
+// 获取nodejs模块安装目录访问权限
+sudo chmod -R 777 /usr/local/lib/node_modules/
+// 安装webpack
+npm install webpack -g
+// 安装vue脚手架
+npm install vue-cli -g
+```
