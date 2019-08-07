@@ -423,3 +423,62 @@ npm install webpack -g
 // 安装vue脚手架
 npm install vue-cli -g
 ```
+
+## 15、Vue利用百度地图定位
+1、在主目录下的index.html引入js
+```
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=xxxxxxxxxxxxx"></script>
+```
+2、在webpack.base.conf.js配置文件中配置BMap，在module.exports 中与entry平级，例如：
+```
+let webpackConfig = {
+  context: path.resolve(__dirname, '../'),
+  entry: {
+    app: './src/main.js'
+  },
+  externals: {
+    'BMap': 'BMap'
+  },
+  output: {
+    path: config.build.assetsRoot,
+    filename: '[name].js',
+    publicPath: process.env.NODE_ENV === 'production'
+      ? config.build.assetsPublicPath
+      : config.dev.assetsPublicPath
+  },
+  resolve: {
+    extensions: ['.js', '.vue', '.json'],
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js',
+      '@': resolve('src'),
+    }
+  }
+```
+3、在项目中引入BMap
+```
+import BMap from 'BMap'
+```
+4、代码
+```
+addressDetail () {
+        let myCity = new BMap.LocalCity()
+        myCity.get((result) => {
+          console.log('当前定位城市：' + result.name)
+          console.log('当前定位城市code：' + result.code)
+        })
+
+        var geolocation = new BMap.Geolocation()
+        geolocation.getCurrentPosition((r) => {
+          if (r.point) {
+            console.log(r.longitude)
+            console.log(r.latitude)
+            var myGeo = new BMap.Geocoder()
+            myGeo.getLocation(new BMap.Point(r.longitude, r.latitude), function (result) {
+              if (result) {
+                console.log(result.address)
+              }
+            })
+          }
+        }, { enableHighAccuracy: true })
+      }
+```
