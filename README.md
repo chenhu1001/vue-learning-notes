@@ -482,3 +482,19 @@ addressDetail () {
         }, { enableHighAccuracy: true })
       }
 ```
+## 16、flex布局
+```
+  .content {
+    margin-top: 5px;
+    width: 10rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    background-color: white;
+  }
+
+  .item {
+    flex: 0 0 20.0% !important;
+    box-sizing: border-box;
+  }
+```
